@@ -1,0 +1,4 @@
+archive/
+organizer.log
+__pycache__/
+*.pyc
