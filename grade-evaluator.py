@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import csv
 import sys
 import os
@@ -5,12 +6,17 @@ import os
 
 def load_csv_data():
     """
-    Prompts the user for a filename, checks if it exists,
-    and extracts all fields into a list of dictionaries.
+    Determines the filename to process: uses a command-line argument
+    if one was provided (e.g. `python3 grade-evaluator.py grades.csv`),
+    otherwise prompts the user interactively. Checks that the file
+    exists, and extracts all fields into a list of dictionaries.
     """
-    filename = input(
-        "Enter the name of the CSV file to process (e.g., grades.csv): "
-    )
+    if len(sys.argv) > 1:
+        filename = sys.argv[1]
+    else:
+        filename = input(
+            "Enter the name of the CSV file to process (e.g., grades.csv): "
+        )
 
     if not os.path.exists(filename):
         print(f"Error: The file '{filename}' was not found.")
