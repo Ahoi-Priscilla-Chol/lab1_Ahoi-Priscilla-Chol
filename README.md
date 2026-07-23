@@ -17,12 +17,15 @@ and resets the workspace for the next batch of grades.
 
 ## Running grade-evaluator.py
 
-Run the script with Python 3:
+Run the script with Python 3, optionally passing the CSV filename as
+an argument:
+
+    python3 grade-evaluator.py grades.csv
+
+If you don't pass a filename, the script will prompt you for one
+interactively:
 
     python3 grade-evaluator.py
-
-When prompted, enter the name of the CSV file to process, for example:
-
     Enter the name of the CSV file to process (e.g., grades.csv): grades.csv
 
 The script will validate the scores (must be between 0-100) and weights
